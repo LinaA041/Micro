@@ -27,7 +27,7 @@ public class OpenTelemetryConfig {
                 .merge(Resource.create(Attributes.of(ResourceAttributes.SERVICE_NAME,
                         applicationName)));
         OtlpGrpcSpanExporter spanExporter = OtlpGrpcSpanExporter.builder()
-                .setEndpoint("http://localhost:4317") // Updated to use the OTLP gRPC port
+                .setEndpoint("http://localhost:4319") // Updated to use the OTLP gRPC port
                 .build();
         SdkTracerProvider sdkTracerProvider = SdkTracerProvider.builder()
                 .addSpanProcessor(BatchSpanProcessor.builder(spanExporter).build())
